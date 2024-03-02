@@ -1,7 +1,3 @@
-/**
- * @author Jacky Feng
- * @date 2024/2/29 21:10
- */
 package top.fexample.fq.model;
 
 import java.io.ObjectInputStream;
