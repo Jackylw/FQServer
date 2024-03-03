@@ -27,6 +27,12 @@ public class ServerCommunication {
                 } else if (checkLogin(user.getAccountId(), user.getPassword())) {
                     msg.setMsgType(MsgType.LOGIN_SUCCESS);
                     oos.writeObject(msg);
+
+                    // 开启线程，让该线程与客户端保持通讯
+                    ConClientThread conClientThread = new ConClientThread(socket);
+                    ManageClientThread.addClient(user.getAccountId(), conClientThread);
+                    conClientThread.start();
+
                 } else {
                     msg.setMsgType(MsgType.LOGIN_ERROR);
                     oos.writeObject(msg);
