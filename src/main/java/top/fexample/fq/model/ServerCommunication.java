@@ -37,8 +37,8 @@ public class ServerCommunication {
         }
     }
 
-    // 校验账号密码
+    // todo 校验账号密码
     public boolean checkLogin(String accountId, String password) {
-        return "admin".equals(accountId) && "123456".equals(password);
+        return "10001".equals(accountId) && "123456".equals(password);
     }
 }
