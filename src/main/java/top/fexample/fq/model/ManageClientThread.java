@@ -9,7 +9,7 @@ import java.util.HashMap;
 public class ManageClientThread {
 
     // userId和ConClientThread的映射
-    public static HashMap<String, ConClientThread> clients = new HashMap<>();
+    private static HashMap<String, ConClientThread> clients = new HashMap<>();
 
     // 向客户端添加通讯线程
     public static void addClient(String userId, ConClientThread client) {

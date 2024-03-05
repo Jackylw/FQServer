@@ -27,7 +27,7 @@ public class ServerCommunication {
                 } else if (checkLogin(user.getAccountId(), user.getPassword())) {
                     msg.setMsgType(MsgType.LOGIN_SUCCESS);
                     oos.writeObject(msg);
-
+                    oos.flush();
                     // 开启线程，让该线程与客户端保持通讯
                     ConClientThread conClientThread = new ConClientThread(socket);
                     ManageClientThread.addClient(user.getAccountId(), conClientThread);
@@ -45,6 +45,6 @@ public class ServerCommunication {
 
     // todo 校验账号密码
     public boolean checkLogin(String accountId, String password) {
-        return "10001".equals(accountId) && "123456".equals(password);
+        return true;
     }
 }
