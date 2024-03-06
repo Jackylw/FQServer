@@ -33,6 +33,8 @@ public class ServerCommunication {
                     ManageClientThread.addClient(user.getAccountId(), conClientThread);
                     conClientThread.start();
 
+                    // 并通知在线用户，使其可更新他们的好友列表
+                    conClientThread.notifyUser(user.getAccountId());
                 } else {
                     msg.setMsgType(MsgType.LOGIN_ERROR);
                     oos.writeObject(msg);

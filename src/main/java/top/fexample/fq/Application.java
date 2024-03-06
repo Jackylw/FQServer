@@ -3,18 +3,14 @@ package top.fexample.fq;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import top.fexample.fq.model.ServerCommunication;
 
 import java.io.IOException;
 
 public class Application extends javafx.application.Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("views/ServerView.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        stage.setResizable(false);
-        stage.setTitle("FQ服务器");
-        stage.setScene(scene);
-        stage.show();
+        ServerCommunication serverCommunication = new ServerCommunication();
     }
 
     public static void main(String[] args) {
