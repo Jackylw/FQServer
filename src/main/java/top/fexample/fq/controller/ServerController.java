@@ -1,6 +1,5 @@
 package top.fexample.fq.controller;
 
-import javafx.application.Platform;
 import javafx.fxml.FXML;
 import top.fexample.fq.model.ServerCommunication;
 
